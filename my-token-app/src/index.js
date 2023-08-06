@@ -1,15 +1,28 @@
-import React from 'react';
+import React from 'react'
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import './tailwind.css'
 import reportWebVitals from './reportWebVitals';
+import { store as reduxToolkitStore } from './redux-toolkit/store'
+import { Provider } from 'react-redux'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+ <Provider store={reduxToolkitStore}>
+       <App />
+   </Provider>,
   </React.StrictMode>
 );
+
+
+  // ReactDOM.render(
+  //   <Provider store={reduxToolkitStore}>
+  //     <App />
+  //   </Provider>,
+  //   document.getElementById('root')
+  // )
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

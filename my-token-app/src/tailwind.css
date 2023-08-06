@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply text-neutral-800;
+}
+
+@layer components {
+  .btn {
+    @apply w-32 h-11 mx-3 rounded;
+  }
+
+  [class^='btn-'] {
+    @apply disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply text-white bg-primary-blue;
+  }
+
+  .btn-warn {
+    @apply text-white bg-red-600;
+  }
+
+  .btn-secondary {
+    @apply text-primary-blue bg-white border border-primary-blue;
+  }
+
+  /* Table styles */
+
+  .t-header {
+    @apply px-6 py-4 whitespace-nowrap text-left text-sm font-bold text-zinc-900 tracking-wider border-blue-200;
+  }
+
+  .t-row {
+    @apply border-t text-sm border-blue-200;
+  }
+
+  .t-row.row-select {
+    @apply bg-blue-100;
+  }
+
+  .t-data {
+    @apply px-6 py-2 whitespace-nowrap border-blue-200;
+  }
+
+  .sort-top {
+    @apply block w-0 border-4 border-transparent border-b-slate-400;
+  }
+
+  .sort-top.sort-active {
+    @apply border-b-slate-900;
+  }
+
+  .sort-bottom {
+    @apply sort-top border-t-slate-400 border-b-transparent;
+  }
+
+  .sort-bottom.sort-active {
+    @apply border-t-slate-900 border-b-transparent;
+  }
+
+  .pagination-active {
+    @apply text-sky-700 bg-sky-100;
+  }
+
+  /* forms */
+
+  .tw-focus {
+    @apply focus:text-gray-700 focus:bg-white focus:border-primary-blue focus:outline-none;
+  }
+
+  .tw-hover {
+    @apply focus:text-gray-700 hover:bg-white hover:border-blue-200 focus:outline-none;
+  }
+
+  .tw-input-basics {
+    @apply text-gray-700
+    bg-white bg-clip-padding
+    border border-solid border-gray-300
+    rounded
+    transition
+    ease-in-out
+    text-base
+    font-normal;
+  }
+
+  .tw-input {
+    @apply tw-input-basics
+    block
+    tw-focus
+    w-full
+    px-3
+    py-1.5
+    m-0;
+  }
+
+  .tw-select {
+    @apply tw-input-basics px-2 py-1 appearance-none outline-none;
+  }
+
+  .form-check-input {
+    @apply appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left cursor-pointer checked:bg-checkbox;
+  }
+
+  /* Status */
+  .status-active {
+    @apply text-center capitalize text-emerald-700 px-2 py-1 bg-teal-50 text-xs font-bold;
+  }
+  .status-inactive {
+    @apply status-active bg-orange-50 text-amber-700;
+  }
+  .status-draft {
+    @apply status-active bg-gray-100 text-neutral-700;
+  }
+
+  /* Custom */
+  .quill .ql-toolbar.ql-snow {
+    @apply bg-gray-100 border-input-border;
+  }
+
+  .quill .ql-container.ql-snow {
+    @apply border-input-border;
+  }
+
+  .quill .ql-toolbar.ql-snow .ql-stroke {
+    @apply stroke-sky-600;
+  }
+
+  .quill .ql-toolbar.ql-snow .ql-fill {
+    @apply fill-sky-600;
+  }
+
+  .quill .ql-toolbar.ql-snow .ql-picker {
+    @apply text-neutral-700;
+  }
+
+  .quill .ql-toolbar.ql-snow button:hover .ql-stroke,
+  .quill .ql-toolbar.ql-snow .ql-picker-label:hover .ql-stroke {
+    @apply !stroke-gray-800;
+  }
+
+  .quill .ql-toolbar.ql-snow button:hover .ql-fill,
+  .quill .ql-toolbar.ql-snow .ql-picker-label:hover .ql-fill {
+    @apply !fill-gray-800;
+  }
+
+  .quill .ql-preview {
+    @apply text-sky-600;
+    font-family: 'icomoon' !important;
+    font-size: 1.3rem;
+    margin-top: -12px;
+  }
+
+  .quill .ql-preview:before {
+    content: '\e90a';
+  }
+
+  .quill .ql-toolbar.ql-snow .ql-formats {
+    margin-right: 8px;
+  }
+}
